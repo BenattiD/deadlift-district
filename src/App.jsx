@@ -23,7 +23,7 @@ function App() {
         </HashRouter>
   );
 }
-
+//git subtree push --prefix dist origin gh-pages
 function Navbar() {
   const user = useUser();
 
