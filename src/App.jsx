@@ -2,19 +2,25 @@ import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { UserProvider, useUser } from "./lib/context/user";
 import { IdeasProvider } from "./lib/context/ideas";
+import { HashRouter, Route, Routes, Link } from "react-router-dom";
 
 function App() {
-  const isLoginPage = window.location.pathname === "/login";
-
   return (
-    <div>
-      <UserProvider>
-        <IdeasProvider>
-          <Navbar />
-          <main>{isLoginPage ? <Login /> : <Home />}</main>
-        </IdeasProvider>
-      </UserProvider>
-    </div>
+        <HashRouter>
+            <UserProvider>
+            <IdeasProvider>
+              <Navbar/>
+              
+              <Link to="/Home">Home</Link>
+           
+            <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
+            
+          </IdeasProvider>
+        </UserProvider>
+        </HashRouter>
   );
 }
 
@@ -35,8 +41,8 @@ function Navbar() {
             </button>
           </>
         ) : (
-			 <a href="/login" className="btn btn-primary">Login</a>
-         
+			 <Link to="/login" class="btn btn-primary">Login</Link>
+      
         )}
       </div>
     </nav>

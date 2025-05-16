@@ -5,6 +5,7 @@ import { account } from "../appwrite";
 const UserContext = createContext();
 
 export function useUser() {
+    
   return useContext(UserContext);
 }
 
