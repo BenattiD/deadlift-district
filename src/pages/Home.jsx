@@ -32,7 +32,7 @@ export function Home() {
       setDescription("");
       setDuration(0);
     } catch (err) {
-      console.error("xx" + err);
+      console.error("xxxx" + err);
     }
 	
   };
