@@ -11,10 +11,8 @@ function App() {
             <IdeasProvider>
               <Navbar/>
               
-              <Link to="/Home">Home</Link>
-           
+              <Table />
             <Routes>
-                <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
             
@@ -41,11 +39,26 @@ function Navbar() {
             </button>
           </>
         ) : (
-			 <Link to="/login" class="btn btn-primary">Login</Link>
+			 <Link to="/login" className="btn btn-primary">Login</Link>
       
         )}
       </div>
     </nav>
+  );
+}
+
+function Table(){
+  const user = useUser();
+
+  return (
+      <div>
+       {user.current ? (
+          <Home />
+       ):(
+        <></>
+       )
+       }
+    </div>
   );
 }
 

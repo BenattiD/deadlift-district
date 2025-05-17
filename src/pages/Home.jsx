@@ -5,7 +5,6 @@ import { useExercise } from "../lib/context/exercise";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 
-
 export function Home() {
   const user = useUser();
   const ideas = useIdeas();
@@ -14,6 +13,7 @@ export function Home() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState(0);
+  const [date, setDate] = useState("");
   
   
 	const animatedComponents = makeAnimated();
@@ -23,19 +23,21 @@ export function Home() {
 	{ value: 'vanilla', label: 'Vanilla' }
 	]
 
-
-
+	
   const handleSubmit = async () => {
     try {
-      await ideas.add({name,description,duration, creator: user.current.name});
+      await ideas.add({name,description,duration, creator: user.current.name,date});
       setName("");
       setDescription("");
       setDuration(0);
+	  setDate("");
     } catch (err) {
       console.error("xxxx" + err);
     }
 	
   };
+
+
 
   return (
     <>
@@ -74,7 +76,7 @@ export function Home() {
 							setDuration(event.target.valueAsNumber);
 					  }}/>
 					</div>
-					<select id="dynamicSelect" name="dynamicSelect"></select>
+					{/*<select id="dynamicSelect" name="dynamicSelect"></select>
 					
 					<Select 
 						options={options} 
@@ -82,10 +84,12 @@ export function Home() {
       					components={animatedComponents}
 						isMulti
 						/>
-
+							*/}
 					<br/>
 					<label className="form-label">Datum:</label>
-					<input type="date" id="formDate" name="date" />
+					<input type="date" id="formDate" name="date" onChange={(event) => {
+							setDate(event.target.value); console.log(event.target.value);
+					  }}/>
 				  </div>
 				  <div className="modal-footer">
 					<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
@@ -103,6 +107,8 @@ export function Home() {
         </section>
       )}
       
+
+	  	
 	  <table id="workout_table" className="table table-striped border-success" data-search="true" > 
 		<thead> 
 		<tr> 
@@ -131,6 +137,11 @@ export function Home() {
 				Date
 			</span> 
 			</th> 
+			<th data-sortable="true"> 
+			<span className="text-success"> 
+				Action
+			</span> 
+			</th> 
 		</tr> 
 		</thead> 
 		<tbody>
@@ -140,6 +151,7 @@ export function Home() {
 				<td className="">{idea.description}</td>
 				<td className="">{idea.duration}</td>
 				<td className="">{idea.creator}</td>
+				<td className="">{idea.date}</td>
 				<td className="">{/* Show the remove button to idea owner. */}
               {user.current && user.current.name === idea.creator && (
                 <button type="button" onClick={() => ideas.remove(idea.$id)}>
