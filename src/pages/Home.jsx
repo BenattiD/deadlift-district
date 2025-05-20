@@ -117,14 +117,14 @@ export function Home() {
 	  <DataTable data={ideas.current} 
 	  	options={{
           columns: [
-            { data: 'name'},
-            { data: 'description' },
-            { data: 'duration' },
-            { data: 'creator'},
-			{ data: 'date'}
+            { data: 'name', className: 'tdClass'},
+            { data: 'description', className:'tdDescription'},
+            { data: 'duration', className: 'tdClass' },
+            { data: 'creator', className: 'tdClass'},
+			{ data: 'date', className: 'tdClass'}
           ],
         }}
-	  className="display">
+	  className="display" >
             <thead>
                 <tr>
                     <th>Name</th>
