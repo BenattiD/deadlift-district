@@ -4,6 +4,12 @@ import { useIdeas } from "../lib/context/ideas";
 import { useExercise } from "../lib/context/exercise";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
+import DataTable from 'datatables.net-react';
+import DT from 'datatables.net-bs5';
+
+
+DataTable.use(DT);
+
 
 export function Home() {
   const user = useUser();
@@ -15,6 +21,8 @@ export function Home() {
   const [duration, setDuration] = useState(0);
   const [date, setDate] = useState("");
   
+  const [tableData, setTableData] = useState([]);
+
   
 	const animatedComponents = makeAnimated();
   const options = [
@@ -22,7 +30,6 @@ export function Home() {
 	{ value: 'strawberry', label: 'Strawberry' },
 	{ value: 'vanilla', label: 'Vanilla' }
 	]
-
 	
   const handleSubmit = async () => {
     try {
@@ -107,63 +114,29 @@ export function Home() {
         </section>
       )}
       
-
+	  <DataTable data={ideas.current} 
+	  	options={{
+          columns: [
+            { data: 'name'},
+            { data: 'description' },
+            { data: 'duration' },
+            { data: 'creator'},
+			{ data: 'date'}
+          ],
+        }}
+	  className="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Duration</th>
+                    <th>Creator</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+        </DataTable>
 	  	
-	  <table id="workout_table" className="table table-striped border-success" data-search="true" > 
-		<thead> 
-		<tr> 
-			<th data-field="name" data-sortable="true"> 
-			<span className="text-success"> 
-				Name
-			</span> 
-			</th> 
-			<th data-field="description" data-sortable="true"> 
-			<span className="text-success"> 
-				Description
-			</span> 
-			</th> 
-			<th data-field="duration" data-sortable="true"> 
-			<span className="text-success"> 
-				Duration
-			</span> 
-			</th> 
-			<th data-field="creator" data-sortable="true"> 
-			<span className="text-success"> 
-				Creator
-			</span> 
-			</th> 
-			<th data-field="date" data-sortable="true"> 
-			<span className="text-success"> 
-				Date
-			</span> 
-			</th> 
-			<th data-sortable="true"> 
-			<span className="text-success"> 
-				Action
-			</span> 
-			</th> 
-		</tr> 
-		</thead> 
-		<tbody>
-			{ideas.current.map((idea) => (
-			<tr data-index={idea.$id} key={idea.$id}>
-				<td className="">{idea.name}</td>
-				<td className="">{idea.description}</td>
-				<td className="">{idea.duration}</td>
-				<td className="">{idea.creator}</td>
-				<td className="">{idea.date}</td>
-				<td className="">{/* Show the remove button to idea owner. */}
-              {user.current && user.current.name === idea.creator && (
-                <button type="button" onClick={() => ideas.remove(idea.$id)}>
-                  Remove
-                </button>
-              )}
-				</td>
-			</tr>
-          ))}
-		</tbody>
-	</table>  
-	
+	 
     </>
   );
 }

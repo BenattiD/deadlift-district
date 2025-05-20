@@ -22,7 +22,7 @@ export function IdeasProvider(props) {
         ID.unique(),
         idea
       );
-      setIdeas((ideas) => [response, ...ideas].slice(0, 10));
+      setIdeas((ideas) => [response, ...ideas].slice());
     } catch (err) {
       console.log(err) // handle error or show user a message
     }
@@ -43,8 +43,9 @@ export function IdeasProvider(props) {
       const response = await databases.listDocuments(
         IDEAS_DATABASE_ID,
         IDEAS_COLLECTION_ID,
-        [Query.orderDesc("$createdAt"), Query.limit(10)]
+        [Query.orderDesc("$createdAt")]
       );
+      console.log(response.documents[0].description);
       setIdeas(response.documents);
     } catch (err) {
       console.log(err)
