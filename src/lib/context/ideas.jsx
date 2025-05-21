@@ -45,7 +45,6 @@ export function IdeasProvider(props) {
         IDEAS_COLLECTION_ID,
         [Query.orderDesc("$createdAt")]
       );
-      console.log(response.documents[0].description);
       setIdeas(response.documents);
     } catch (err) {
       console.log(err)

@@ -69,10 +69,5 @@ button:focus-visible {
 
 .tdDescription{
   white-space: pre;  
-  border: 1px solid;
-
-}
-.tdClass{
-  border: 1px solid;
-
+  
 }
