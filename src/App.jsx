@@ -43,7 +43,10 @@ function Navbar() {
       
         )}
       </div>
+
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FVienna&showPrint=0&showTz=0&mode=WEEK&src=N2M2NzUyZmU4ZDM3MmM2OGVjZGE4N2MxOTQxNjE1Mjg3NDFhMmVlNjQ2MzUzOTg4MTRkNWRlNTMwYTAyNzc2NkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%233f51b5" style={{width:"100%"}} height="600" frameBorder="0" scrolling="no"></iframe>  
     </nav>
+    
   );
 }
 
