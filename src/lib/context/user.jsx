@@ -15,7 +15,7 @@ export function UserProvider(props) {
   async function login(email, password) {
     const loggedIn = await account.createEmailPasswordSession(email, password);
     setUser(loggedIn);
-    window.location.replace("/ideas-tracker/");
+    window.location.replace("/deadlift-district/");
   }
 
   async function logout() {
