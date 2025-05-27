@@ -43,7 +43,7 @@ export function IdeasProvider(props) {
       const response = await databases.listDocuments(
         IDEAS_DATABASE_ID,
         IDEAS_COLLECTION_ID,
-        [Query.orderDesc("$createdAt")]
+        [Query.orderDesc("$createdAt"), Query.limit(200)]
       );
       setIdeas(response.documents);
     } catch (err) {

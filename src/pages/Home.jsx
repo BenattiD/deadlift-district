@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useUser } from "../lib/context/user";
 import { useIdeas } from "../lib/context/ideas";
 import { useExercise } from "../lib/context/exercise";
@@ -16,7 +16,8 @@ export function Home() {
   const user = useUser();
   const ideas = useIdeas();
   const exercises = useExercise();
-  
+  const table = useRef();
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [duration, setDuration] = useState(0);
@@ -24,6 +25,24 @@ export function Home() {
   
   const [tableData, setTableData] = useState([]);
 
+  const handleChange = (event) => {
+    // When the checkbox changes, its `event.target.checked` property
+    // will give you the new boolean value (true if checked, false if unchecked).
+	if(event.target.checked){
+	  table.current.dt().search("").draw(false);
+	}else{
+      table.current.dt().search("^(?!.*Legacy).*$",true).draw(false);
+	}
+    
+  };
+
+/*	let handleC22hange = () => {
+		let api = table.current!.dt();
+
+		if (api) {
+		api.page('previous').draw(false);
+		}
+  };*/
   
 	const animatedComponents = makeAnimated();
   const options = [
@@ -114,8 +133,15 @@ export function Home() {
           
         </section>
       )}
-      
+		<br/>
+		<div className="form-check form-switch">
+			<input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"  onChange={handleChange}/>
+			<label className="form-check-label" htmlFor="flexSwitchCheckDefault">Show Legacy</label>
+		</div>
+
+
 	  <DataTable data={ideas.current} 
+	  	ref={table}
 	  	options={{
           columns: [
             { data: 'name', className: 'tdClass'},
@@ -125,7 +151,8 @@ export function Home() {
 			{ data: 'date', className: 'tdClass'},
 			{ data: '$id'}
           ],
-		  order: []
+		  order: [],
+		  search: { search: "^(?!.*Legacy).*$", regex:true}
 
         }}
 		slots={{
