@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <nav>
 		<h1 className="text text-success text-center "> 
-		Deadlift District Tracker
+		Deadlift District
 		</h1> 
       <div style={{marginLeft:"Auto", marginRight:"0", textAlign:"right"}}>
         {user.current ? (
