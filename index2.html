@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlift District</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to use the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors">Deadlift District</a>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#club" class="text-lg text-gray-300 hover:text-cyan-400 transition-colors">Der Club</a>
+                <a href="#impression" class="text-lg text-gray-300 hover:text-cyan-400 transition-colors">Eindrücke</a>
+                <a href="#membership" class="text-lg text-gray-300 hover:text-cyan-400 transition-colors">Mitgliedschaft</a>
+                <a href="#contact" class="text-lg text-gray-300 hover:text-cyan-400 transition-colors">Kontakt</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Optional, for smaller screens) -->
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Section 1: Der Club -->
+        <section id="club" class="min-h-screen flex items-center pt-20 bg-gray-900">
+            <div class="container mx-auto px-6 py-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Content -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Deadlift District</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4"><i>Mehr als nur Training!</i></h3>
+                        <p class="text-lg text-gray-400 mb-6">
+                            Bereit, deine Fitness auf ein neues Level zu heben? Entdecke den brandneuen Functional Fitness Club in Wiener Neustadt – deine Anlaufstelle für ein ganzheitliches und effektives Trainingserlebnis.
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            Werde Teil der Comunity! Was dich erwartet:
+                            <ul class="list-disc" style="margin-left:30px">
+                                <li>Große Trainingshalle mit Top Equipment</li>
+                                <li>Vordefinierte Trainingspläne</li>
+                                <li>Gemeinsame Sessions</li>
+                                <li>Eine topmotivierte und wachsende Community</li>
+                            </ul>
+                        </p>
+                        
+                    </div>
+                    <!-- Image -->
+                    <div class="flex justify-center">
+                        <img 
+                            src="" 
+                            alt="Logo" 
+                            width=300
+                            height=300
+                            class="rounded-lg shadow-2xl max-w-md object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/7ca8bf?text=Image+Not+Found';"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Eindrücke -->
+        <section id="impression" class="min-h-screen flex items-center pt-20 bg-gray-800">
+            <div class="container mx-auto px-6 py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Eindrücke</h2>
+                    <p class="text-lg text-gray-400 mt-2">Eine Sammlung unserer Top Momente</p>
+                </div>
+                <!-- Image Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <img 
+                        src="img/2.jpeg" 
+                        alt="2" 
+                        class="rounded-lg shadow-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/a5b4fc?text=Image+Not+Found';"
+                    >
+                    <img 
+                        src="img/3.jpeg" 
+                        alt="3" 
+                        class="rounded-lg shadow-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/fca5a5?text=Image+Not+Found';"
+                    >
+                    <img 
+                        src="img/4.jpeg" 
+                        alt="4" 
+                        class="rounded-lg shadow-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/fdba74?text=Image+Not+Found';"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Mitgliedschaft -->
+        <section id="membership" class="min-h-screen flex items-center pt-20 bg-gray-800">
+            <div class="container mx-auto px-6 py-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Mitgliedschaft</h2>
+                    <p class="text-lg text-gray-400 mt-2">Werde Teil der Community!</p>
+                </div>
+                <!-- Image Grid -->
+                <!-- Membership Cards Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Card 1: Pay-as-you-wish -->
+                    <div class="bg-gray-800 rounded-xl p-8 flex flex-col shadow-lg border border-gray-700 hover:border-cyan-400 transition-all duration-300">
+                        <h3 class="text-3xl font-bold text-white mb-4">Einzelne Workouts</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">Du möchtest ohne Mitgliedschaft trainieren?<br/> Kein Problem! Gegen eine freie Spende bist du dabei.</p>
+                        <button class="mt-auto bg-transparent hover:bg-cyan-500 text-cyan-400 font-semibold hover:text-white py-3 px-6 border border-cyan-400 hover:border-transparent rounded-lg transition-colors duration-300">
+                            Freie Spende
+                        </button>
+                    </div>
+                    <!-- Card 2: All Access (Highlighted) -->
+                    <div class="bg-cyan-600 rounded-xl p-8 flex flex-col shadow-2xl transform lg:scale-105 border-2 border-cyan-400">
+                        <h3 class="text-3xl font-bold text-white mb-4">All Access</h3>
+                        <p class="text-gray-200 mb-8 flex-grow">24/7 Zugang zu dem Club.<br/>Zugriff auf alle aktuellen Workouts.<br/>Das volle Paket.</p>
+                         <button class="mt-auto bg-white hover:bg-gray-200 text-cyan-700 font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                            40€ / Monat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Contact -->
+        <section id="contact" class="min-h-screen flex items-center pt-20 bg-gray-900">
+            <div class="container mx-auto px-6 py-12">
+                 <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Image -->
+                    <div class="flex justify-center order-2 md:order-1">
+                        <img 
+                            src="img/5.jpeg" 
+                            alt="Person using a phone" 
+                            class="rounded-lg shadow-2xl w-full max-w-md object-cover"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/93c5fd?text=Image+Not+Found';"
+                        >
+                    </div>
+                     <!-- Contact Form -->
+                    <div class="order-1 md:order-2">
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 text-center md:text-left">Kontakt</h2>
+                        <p class="text-lg text-gray-400 mb-8 text-center md:text-left">
+                            Du hast Fragen oder willst ein Teil des Deadlift Districts werden? Schreib uns!
+                        </p>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Dein Name" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Deine Email" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white">
+                            </div>
+                            <div>
+                                <textarea placeholder="Deine Nachricht" rows="5" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white"></textarea>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                                    Absenden
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

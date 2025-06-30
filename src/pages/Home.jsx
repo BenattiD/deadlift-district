@@ -24,12 +24,16 @@ export function Home() {
   const [date, setDate] = useState("");
   
   const [tableData, setTableData] = useState([]);
+  const [randomWorkout,setRandomWorkout] = useState();
+
 
   const handleChange = (event) => {
     // When the checkbox changes, its `event.target.checked` property
     // will give you the new boolean value (true if checked, false if unchecked).
 	if(event.target.checked){
 	  table.current.dt().search("").draw(false);
+		setRandomWorkout(ideas.current[parseInt(Math.random()*ideas.current.length)]);
+
 	}else{
       table.current.dt().search("^(?!.*Legacy).*$",true).draw(false);
 	}
